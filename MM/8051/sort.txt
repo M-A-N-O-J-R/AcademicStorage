@@ -1,0 +1,48 @@
+mov r0,#50h
+mov @r0,#09h
+inc r0
+mov @r0,#08h
+inc r0
+mov @r0,#04h
+inc r0
+mov @r0,#00h
+inc r0
+mov @r0,#09h
+inc r0
+mov @r0,#01h
+inc r0
+mov @r0,#02h
+inc r0
+mov @r0,#01h
+inc r0
+mov @r0,#07h
+inc r0
+mov @r0,#07h
+inc r0
+
+
+
+mov r7,#50h
+mov r6,#09h
+nextloop: mov r5, #09h
+next:mov a,#09h
+subb a,r5
+add a,r7
+mov r0,a
+add a,#01h
+mov r1,a
+mov a,@r1
+mov b,@r0
+subb a,b
+jc swapper
+nexter:djnz r5,next
+djnz r6,nextloop
+mov r0,#00h
+mov r1,#00h
+swapper:mov a,@r0
+mov b,@r1
+xch a,b
+mov @r0,a
+mov @r1,b
+mov a,r1
+cjne a,r0,nexter

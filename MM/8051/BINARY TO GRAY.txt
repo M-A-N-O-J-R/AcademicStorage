@@ -1,0 +1,8 @@
+MOV A,#06H
+MOV R7,A
+RR A
+XRL A,R7
+------------------
+MOV A,#05
+RRC A 
+XRL A,#05

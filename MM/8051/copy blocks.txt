@@ -1,0 +1,12 @@
+mov 50h,#012h
+mov 51h,#013h
+mov 52h,#014h
+mov r0,#050h
+mov r1,#030h
+mov r2,#03h
+copy: mov a,@r0
+mov @r1,a
+inc r0
+inc r1
+dec r2
+cjne r2,#00h,copy

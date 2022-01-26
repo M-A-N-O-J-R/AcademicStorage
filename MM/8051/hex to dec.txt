@@ -1,0 +1,32 @@
+; store desired hex value in mem
+MOV 010H, #02FH
+; store address in R0
+MOV R0, #010H
+; extract 1st digit
+MOV A, @R0
+ANL A, #0F0H
+DA A ; no need
+; rotate 4 times
+RR A
+RR A
+RR A
+RR A
+; store it in a mem location
+MOV 011H, A
+; multiply with decimal 16
+MOV A, #000H
+MULTIPLY: ADD A, #016H
+DA A
+DEC 011H
+CJNE 011H, #000H, MULTIPLY
+; store in a mem location
+MOV 012H, A
+; extract next digit
+MOV A, @R0
+ANL A, #00FH
+DA A
+; add with previous result
+ADD A, 012H
+DA A
+; store it
+MOV 013H, A

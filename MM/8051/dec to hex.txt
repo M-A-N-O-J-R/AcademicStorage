@@ -1,0 +1,16 @@
+mov r0,#020h
+mov r7,#0f0h
+mov a,r0
+mov b,r7
+anl a,b
+rr a
+rr a
+rr a
+rr a
+mov b,#0ah
+mul ab
+mov r2,a
+mov a,r0
+anl a,#00fh
+mov b,r2
+add a,b

@@ -1,0 +1,14 @@
+mov a,#30h
+mov b,#0ah
+add a,b
+da a
+acall delay1
+mov a,#00h
+delay1: mov r5,#10d
+label:acall delay
+ djnz r5,label
+delay:mov r6,#250d
+ mov r7,#250d
+loop1:djnz r6,loop1
+loop2:djnz r7,loop1
+ret

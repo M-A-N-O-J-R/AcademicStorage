@@ -1,0 +1,28 @@
+mov a,#30h
+mov b,#0ah
+add a,b
+da a
+mov r0,a
+acall delay1
+acall delay1
+acall delay1
+acall delay1
+mov a,r0
+acall delay1
+acall delay1
+acall delay1
+acall delay1
+mov a,#00h
+mov r0,a
+sjmp thatss
+
+delay1: mov r5,#0ffh
+label:acall delay
+ djnz r5,label
+delay:mov r6,#250d
+ mov r7,#250d
+loop1:djnz r6,loop1
+loop2:djnz r7,loop2
+ret
+
+thatss: nop

@@ -1,0 +1,24 @@
+MOV R7, #0FEH
+MOV A, R7
+; extract the higher nibble
+ANL A, #0F0H
+; move it to r6
+MOV R6, A
+; rotate the content
+; 4 times to make it
+; as lower nibble
+RR A
+RR A
+RR A
+RR A
+; or it with r6
+ORL A, R6
+MOV R6, A
+
+
+----------------------------------------------
+mov r7,#56h
+mov a,r7
+swap a
+xchd r,c6
+mov r6,a

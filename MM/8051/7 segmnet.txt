@@ -1,0 +1,27 @@
+MOV R0, #050H
+MOV @R0, #07EH ; code for 0
+INC R0
+MOV @R0, #030H ; code for 1
+INC R0
+MOV @R0, #06DH ; code for 2
+INC R0
+MOV @R0, #079H ; code for 3
+INC R0
+MOV @R0, #033H ; code for 4
+INC R0
+MOV @R0, #05BH ; code for 5
+INC R0
+MOV @R0, #05FH ; code for 6
+INC R0
+MOV @R0, #070H ; code for 7
+INC R0
+MOV @R0, #07FH ; code for 8
+INC R0
+MOV @R0, #07BH ; code for 9
+ 
+; display
+MOV R0, #050H ; starting address
+MOV A, #002H ; input number
+ADD A, R0 ; hold effectve address
+MOV R1, A ; transfer it to R1
+MOV P0, @R1 ; P1, P2 OR P3 CAN ALSO BE USED
